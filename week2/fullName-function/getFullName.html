@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get FullName Function</title>
+    <link rel="stylesheet" href="getFullName.css">
+</head>
+
+<body>
+    <div class="container">
+        <form id="FullName-form">
+            <fieldset>
+                <legend>GET FULLNAME</legend>
+                <label for="firstName">Enter Your Firstname:</label>
+                <input type="text" name="firstName" class="firstName" placeholder="Firstname">
+                <label for="lastName">Enter Your Lastname:</label>
+                <input type="text" name="lastName" class="lastName" placeholder="Lastname">
+                <div class="formal-name">
+                    <input name="formal" type="checkbox" class="formalName">
+                    <label for="formal">Use formal name</label>
+                </div>
+                <div class="gender">
+                    <label for="gender">Select Your gender:</label>
+                    <input type="radio" name="gender" value="male">Male
+                    <input type="radio" name="gender" value="female">Female
+                </div>
+                <button type="button" onclick="getFullName()">Get Boardingcard</button>
+            </fieldset>
+        </form>
+        <div class="result"></div>
+    </div>
+    <script src="getFullName.js"></script>
+</body>
+
+</html>

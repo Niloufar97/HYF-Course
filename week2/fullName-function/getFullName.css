@@ -1,0 +1,25 @@
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+fieldset{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 15px;
+    padding: 20px;
+}
+input.firstName, input.lastName, button{
+    width: 300px;
+    margin: 10px 0;
+}
+.formal-name{
+    margin: 10px 0;
+}
+.result{
+    text-align: center;
+    margin: 20px auto;
+    width: 500px;
+    height: 20px;
+}
