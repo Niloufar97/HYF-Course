@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>note taking app</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <form action="#">
-        <input type="text" id="noteInput">
-        <button type="button" id="addBtn">Add</button>
-        <input type="number" id="sreachInput">
-        <button type="button" id="searchBtn">Search</button>
-    </form>
-    <ul id="noteList">
 
-    </ul>
+<body>
+    <div class="container">
+        <form action="#">
+            <div class="addMore">
+                <input type="text" id="noteInput">
+                <button type="button" id="addBtn">Add</button>
+            </div>
+            <div class="search">
+                <input type="number" id="sreachInput">
+                <button type="button" id="searchBtn">Search</button>
+            </div>
+    
+        </form>
+        <ul id="noteList">
+    
+        </ul>
+    
+    </div>
     <script src="script.js"></script>
 </body>
+
 </html>
