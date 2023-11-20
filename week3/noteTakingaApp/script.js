@@ -43,6 +43,10 @@ addBtn.addEventListener("click", () => {
 // searching------------------------
 searchBtn.addEventListener("click", () => {
   let searchedId = parseInt(searchInput.value);
-  let filteredNotes = notes.filter((note) => note.id === searchedId);
-  showNotes(filteredNotes);
+  if(searchedId > notes.length || searchedId <= 0){
+    alert("invalid Id")
+  }else{
+    let filteredNotes = notes.filter((note) => note.id === searchedId);
+    showNotes(filteredNotes);
+  }
 });
