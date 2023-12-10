@@ -61,7 +61,7 @@ console.log(cheepItemList)
 
 //expensive---------------------------
 const expensive = myList.filter(expensive => expensive.price > 8000)
-const expensiveItemList = expensive.map(item => item.type)
+const expensiveItemList = expensive.map(item => item.price)
 console.log(expensiveItemList);
 // item with parking-------------------
 const haveParking = myList.filter((itemWithParking) => 
