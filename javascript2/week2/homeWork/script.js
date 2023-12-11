@@ -7,8 +7,10 @@ const shortMovieTitles = movies.map(movie => {
     return (shortTitle[0] + shortTitle[1])   
 })
 // console.log(shortMovieTitles);
+
 const longMoviesTitle = movies.map(movie => movie.title);
 // console.log(longMoviesTitle);
+
 let countMovies = 0;
 movies.map(movie => {
     if(movie.year >= 1980 && movie.year <= 1989){
@@ -16,6 +18,7 @@ movies.map(movie => {
     }
 })
 // console.log(countMovies);
+
 function createTag(number){
     let tag;
     if(number < 4){
@@ -30,5 +33,10 @@ const arrayWithTag = movies.map(movie => {
     return {...movie , tag : createTag(movie.rating)}
 })
 // console.log(arrayWithTag)
-const rateMoviesHigerThanSix = movies.filter(movie => movie.rating > 6).map(movie => (movie.rating));
-// console.log(rateMoviesHigerThanSix);
+
+const keyWords = ["Surfer" , "Alien" , "Benjamin"];
+const filteredMoviesByTitle = movies.filter(movie => {
+    const lowerCasemovie = movie.title.toLowerCase();
+    return keyWords.some(keyword => lowerCasemovie.includes(keyword.toLowerCase()));
+})
+console.log(filteredMoviesByTitle)
