@@ -16,3 +16,17 @@ movies.map(movie => {
     }
 })
 // console.log(countMovies);
+function createTag(number){
+    let tag;
+    if(number < 4){
+        tag = "bad"
+    }else if(number < 7){
+        tag = "Average "
+    }
+    else tag = "good"
+    return tag;
+}
+const arrayWithTag = movies.map(movie => {
+    return {...movie , tag : createTag(movie.rating)}
+})
+// console.log(arrayWithTag)
