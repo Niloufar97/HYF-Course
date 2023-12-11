@@ -39,4 +39,12 @@ const filteredMoviesByTitle = movies.filter(movie => {
     const lowerCasemovie = movie.title.toLowerCase();
     return keyWords.some(keyword => lowerCasemovie.includes(keyword.toLowerCase()));
 })
-console.log(filteredMoviesByTitle)
+// console.log(filteredMoviesByTitle.length)
+
+// title dublicated 
+const hasDoublicatedWords = (title) =>{
+    const spiltedWords = title.split(' ');
+    return spiltedWords.some((word, index) => spiltedWords.indexOf(word) !== index);
+}
+doublicatedWordsInTitle = movies.filter( movie => hasDoublicatedWords(movie.title));
+console.log(doublicatedWordsInTitle)
