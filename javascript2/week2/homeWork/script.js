@@ -30,3 +30,5 @@ const arrayWithTag = movies.map(movie => {
     return {...movie , tag : createTag(movie.rating)}
 })
 // console.log(arrayWithTag)
+const rateMoviesHigerThanSix = movies.filter(movie => movie.rating > 6).map(movie => (movie.rating));
+// console.log(rateMoviesHigerThanSix);
