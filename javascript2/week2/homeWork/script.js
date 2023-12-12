@@ -47,4 +47,14 @@ const hasDoublicatedWords = (title) =>{
     return spiltedWords.some((word, index) => spiltedWords.indexOf(word) !== index);
 }
 doublicatedWordsInTitle = movies.filter( movie => hasDoublicatedWords(movie.title));
-console.log(doublicatedWordsInTitle)
+// console.log(doublicatedWordsInTitle)
+
+function avarageRating () {
+    const moviesLength = movies.length
+    const ratingSumation = movies.reduce((total , movie) => {
+        return (total + movie.rating)
+    } , 0)
+    const average = ratingSumation/moviesLength
+    console.log(average)
+}
+avarageRating() 
