@@ -39,3 +39,15 @@ selectPriceEl.addEventListener('change' , () => {
    selectedValue === 'all' ? renderProducts(products) :renderProducts(filteredProductsByPrice)
     
 })
+// search products
+const searchBox = document.getElementById('search-box');
+searchBox.addEventListener('input' , () => {
+    const searchValue = searchBox.value.toLowerCase();
+    const searchedProducts = products.filter(product => {
+        let productName =product.name.toLowerCase();
+        return productName.includes(searchValue)
+    })
+    
+    productsListUl.innerHTML = ""
+    searchedProducts ? renderProducts(searchedProducts) : productsListUl.innerHTML = `<li>Not Found</li>`
+})
