@@ -49,5 +49,5 @@ searchBox.addEventListener('input' , () => {
     })
     
     productsListUl.innerHTML = ""
-    searchedProducts ? renderProducts(searchedProducts) : productsListUl.innerHTML = `<li>Not Found</li>`
+    searchedProducts.length > 0 ? renderProducts(searchedProducts) : productsListUl.innerHTML = `<li>Product Not Found</li>`
 })
