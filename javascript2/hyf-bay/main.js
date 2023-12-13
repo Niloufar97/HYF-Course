@@ -16,3 +16,26 @@ function renderProducts(products) {
     })
 }
 renderProducts(products)
+
+//products with price tag
+const productsWithPriceTag = products.map((product) => {
+    let priceTag;
+    if(product.price < 2999){
+        priceTag = 'cheep';
+    }else if(product.price < 7000){
+        priceTag = 'middle';
+    }else{
+        priceTag = 'expensive'
+    }
+    return {...product , tag : priceTag}
+})
+// filter based on price
+const selectPriceEl = document.getElementById('price-filter');
+selectPriceEl.addEventListener('change' , () => {
+    const selectedOption = selectPriceEl.options[selectPriceEl.selectedIndex];
+    const selectedValue = selectedOption.value;
+    let filteredProductsByPrice =productsWithPriceTag.filter(product => product.tag === selectedValue)
+    productsListUl.innerHTML = ""
+   selectedValue === 'all' ? renderProducts(products) :renderProducts(filteredProductsByPrice)
+    
+})
