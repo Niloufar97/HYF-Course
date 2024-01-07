@@ -1,0 +1,38 @@
+[
+    {
+        "orderName" : "first order" ,
+        "orderId" : "1",
+        "price" : "1000DKK",
+        "drinks" : [
+            {
+                "name": "cola",
+                "amount" : "120 ml"
+            },
+            {
+                "name": "water",
+                "amount" : "100 ml"
+            }
+        ],
+        "extras" : {
+            "chese" : "5"
+        }
+    },
+    {
+        "orderName" : "second order" ,
+        "orderId" : "2",
+        "price" : "500 DKK",
+        "drinks" : [
+            {
+                "name": "pepsi",
+                "amount" : "120 ml"
+            },
+            {
+                "name": "water",
+                "amount" : "100 ml"
+            }
+        ],
+        "extras" : {
+            "chese" : 7
+        }
+    }
+]
