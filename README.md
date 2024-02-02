@@ -1,1 +1,3 @@
-# HYF-js-course
+# HYF Course
+
+It's all about class exercises and homework
