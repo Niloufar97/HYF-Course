@@ -28,7 +28,7 @@ app.post(
   ],
   (req, res) => {
     const errors = validationResult(req);
-    if (!errors.isEmpty()) {
+    if (!errors.isEmpty) {
       return res.status(400).json({
         data: null,
         errors: errors.array(),
@@ -72,6 +72,18 @@ app.put(
     res.json({ data: users, message: "ok" });
   }
 );
+
+// delete api ----------------------------------------------------------------
+app.delete('/users/:id' , (req, res) => {
+  const user = users.find(user => user.id === parseInt(req.params.id));
+  if(!user){
+    return res.status(404).json({data: null , message: "user not found"})
+  };
+  const index = users.indexOf(user);
+  users.splice(index , 1);
+  res.json({data: users , message: "ok"})
+})
+
 
 // listen to server-----------------------------------------------------------
 const port = process.env.PORT || 3000;
