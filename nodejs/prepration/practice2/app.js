@@ -1,6 +1,9 @@
 const express = require("express");
 let users = require('./users')
 const app = express();
+
+app.use(express.json());
+
 app.get("/users" , (req , res) => {
     res.json({data: users , message: "ok"});
 });
@@ -11,6 +14,10 @@ app.get("/users/:id" , (req, res) => {
     res.json({data: user, message: "ok"});
 })
 
+app.post("/users" , (req , res) => {
+    users.push({id : users.length + 1 , ...req.body});
+    res.json({data : users , message : "ok"})
+})
 
 const port = process.env.PORT || 3000
 app.listen(port , () => {
