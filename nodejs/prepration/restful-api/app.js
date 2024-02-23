@@ -1,9 +1,11 @@
 const express = require("express");
 
 const app = express();
-const usersRoutes = require("./routes/user-routes")
+const usersRoutes = require("./routes/user-routes");
+const homeRoutes = require("./routes/home-routes")
 
 app.use(express.json());
+app.use("/" , homeRoutes)
 app.use('/api/users', usersRoutes);
 
 
