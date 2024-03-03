@@ -27,6 +27,13 @@ router.post("/" , (req, res) => {
     const newContact = req.body;
     contacts.push(newContact);
     res.status(201).json({data: contacts , message : "ok"})
-})
+});
+
+router.get("/:id" , (req , res) => {
+    const contactId = +req.params.id;
+    const contact = contacts.find(c => c.id === contactId);
+    res.json({data: contact , message: "ok"});
+});
+
 
 export default router;
