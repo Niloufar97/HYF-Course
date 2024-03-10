@@ -7,9 +7,7 @@ const UserItem = (props) => {
             <li>Age : {props.age}</li>
             <li>Address : {props.address}</li>
             <li>Height : {props.height}</li>
-            <li>Languages : {props.languages.map((language, index) => (
-                <span key={index}>{language} ,</span>
-            ))}</li>
+            <li>Languages : {props.languages.join(", ")}</li>
         </ul>
     );
   }
