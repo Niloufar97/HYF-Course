@@ -1,0 +1,15 @@
+.userCard{
+    display:flex;
+    gap: 1rem;
+    padding: 1rem;
+}
+.userItem{
+    border: 1px solid black;
+    padding: 1rem;
+    list-style: none;
+    
+}
+.userItem li{
+    padding: 0.3rem;
+    
+}
