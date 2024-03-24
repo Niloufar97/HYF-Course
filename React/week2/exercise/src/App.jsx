@@ -1,48 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import useSWR from 'swr'
+import CallbackExercise from './components/CallbackExercise'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  const {data} = useSWR("https://randomuser.me/api/" , async(url)=> {
-    const response = await fetch (url);
-    return await response.json()
-  })
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div>
-        {data? (
-          <h1>
-            {data.results[0].name.first}
-          </h1>
-        ):
-        <p>loading...</p>
-        }
-      </div>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <CallbackExercise/>
     </>
   )
 }
