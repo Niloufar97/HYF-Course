@@ -1,22 +1,23 @@
 import "./App.css";
-import People from "./components/People";
-import { createContext, useState } from "react";
 
-let initialUsers = [
-  { id: 1, name: "Niloufar", age: 26 },
-  { id: 2, name: "Mohammad", age: 30 },
-  { id: 3, name: "Armin", age: 3 },
-];
-export const UserContext = createContext();
+import { useState } from "react";
+import List from "./components/List";
+
+
+let initialTodos = [
+  {id:1 , title: "do somethig" , done : true},
+  {id: 2 , title : "do another ting" , done : false}
+]
+
+
 
 function App() {
-  const [users] = useState(initialUsers);
+  const [todos , setTodos] = useState(initialTodos)
+ 
 
   return (
-    <UserContext.Provider value={users}>
-      <h1>hello</h1>
-      <People />
-    </UserContext.Provider>
+    <List list={todos}  item={todo => <p>{todo.title}</p>}/>
+ 
   );
 }
 
