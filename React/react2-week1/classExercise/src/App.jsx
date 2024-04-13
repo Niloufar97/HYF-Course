@@ -12,7 +12,7 @@ let initialTodos = [
 
 
 function App() {
-  const [todos , setTodos] = useState(initialTodos)
+  const [todos] = useState(initialTodos)
  
 
   return (
